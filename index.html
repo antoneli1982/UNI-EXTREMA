@@ -246,13 +246,228 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
   }
 }
 
+
+.sim-demo-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:24px;
+  align-items:stretch;
+  margin-top:26px;
+}
+.sim-browser{
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:24px;
+  overflow:hidden;
+  background:#0f1113;
+  box-shadow:0 28px 80px rgba(0,0,0,.38);
+  min-height:480px;
+  display:flex;
+  flex-direction:column;
+}
+.sim-browser-bar{
+  height:48px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0 16px;
+  background:linear-gradient(180deg,#2a272b,#1c1a1d);
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.sim-browser-dot{width:9px;height:9px;border-radius:50%;background:#7b767d}
+.sim-browser-dot:nth-child(1){background:#ef6a6d}
+.sim-browser-dot:nth-child(2){background:#d5a85b}
+.sim-browser-dot:nth-child(3){background:#75b995}
+.sim-url{
+  margin-left:10px;
+  min-width:0;
+  flex:1;
+  padding:7px 11px;
+  border-radius:9px;
+  background:rgba(255,255,255,.055);
+  color:#aaa6ad;
+  font-size:10px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.sim-frame-wrap{position:relative;flex:1;min-height:430px;background:#151d21}
+.sim-frame{
+  width:100%;
+  height:100%;
+  min-height:430px;
+  border:0;
+  display:block;
+  background:#151d21;
+}
+.sim-fallback{
+  position:absolute;
+  inset:auto 16px 16px 16px;
+  display:flex;
+  justify-content:flex-end;
+  pointer-events:none;
+}
+.sim-fallback a{pointer-events:auto}
+.stack-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.stack-list{
+  display:grid;
+  gap:10px;
+  margin-top:14px;
+}
+.stack-item{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:12px;
+  align-items:start;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background:rgba(255,255,255,.035);
+}
+.stack-icon{
+  width:42px;height:42px;border-radius:12px;
+  display:grid;place-items:center;
+  background:rgba(199,47,51,.16);
+  color:#f27a7d;
+  font-weight:900;
+  font-size:12px;
+}
+.stack-item b{display:block;font-size:13px;margin-bottom:4px}
+.stack-item span{font-size:11px;line-height:1.5;color:#aaa6ad}
+.sim-logic{
+  margin-top:16px;
+  padding:14px 16px;
+  border-left:3px solid var(--uni-red);
+  background:rgba(199,47,51,.08);
+  border-radius:0 14px 14px 0;
+  font-size:12px;
+  line-height:1.6;
+  color:#d8d4d9;
+}
+@media(max-width:980px){
+  .sim-demo-grid{grid-template-columns:1fr}
+  .sim-browser{min-height:420px}
+  .sim-frame,.sim-frame-wrap{min-height:370px}
+}
+@media(max-width:640px){
+  .sim-browser{min-height:360px;border-radius:18px}
+  .sim-frame,.sim-frame-wrap{min-height:310px}
+}
+
+
+.sim-link-panel{
+  min-height:480px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 85% 12%,rgba(199,47,51,.24),transparent 34%),
+    linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  box-shadow:0 28px 80px rgba(0,0,0,.34);
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.sim-link-panel:before{
+  content:"";
+  position:absolute;
+  right:-80px;
+  top:-80px;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 0 0 42px rgba(255,255,255,.025),0 0 0 84px rgba(255,255,255,.016);
+}
+.sim-link-kicker{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#f18b8e;
+  font-weight:800;
+  margin-bottom:16px;
+}
+.sim-link-panel h3{
+  font-size:clamp(28px,3.1vw,48px);
+  line-height:1.04;
+  max-width:680px;
+  margin-bottom:16px;
+}
+.sim-link-panel p{
+  max-width:700px;
+  font-size:15px;
+  line-height:1.7;
+  color:#c9c5cb;
+}
+.sim-link-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:22px 0 28px;
+}
+.sim-link-tag{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  font-size:11px;
+  color:#d8d4d9;
+}
+.sim-url-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:15px 16px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(0,0,0,.16);
+  margin-bottom:14px;
+}
+.sim-url-card code{
+  font-family:"Poppins",sans-serif;
+  font-size:11px;
+  color:#aaa6ad;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.sim-url-card span{
+  font-size:16px;
+  color:#ef6a6d;
+}
+.sim-open{
+  width:100%;
+  min-height:58px;
+  font-size:15px;
+  letter-spacing:.01em;
+}
+.sim-security-note{
+  margin-top:12px;
+  font-size:10px;
+  color:#8f8a92;
+  line-height:1.5;
+}
+@media(max-width:980px){
+  .sim-link-panel{min-height:420px}
+}
+@media(max-width:640px){
+  .sim-link-panel{min-height:360px;padding:24px}
+  .sim-link-panel p{font-size:13px}
+}
+
 </style>
 </head>
 <body>
 <div class="topbar">
   <div class="brand-mini slogan-top">ENGENHARIA QUE MEDE, <span>INTELIGÊNCIA QUE TRANSFORMA.</span></div>
   <div class="top-actions">
-    <span class="counter" id="counter">01 / 15</span>
+    <span class="counter" id="counter">01 / 16</span>
     <a class="site-link" href="https://unismartsolution.com.br/" target="_blank" rel="noopener"><span>Site UNI</span><b>↗</b></a>
   </div>
 </div>
@@ -396,9 +611,92 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
   </div>
 </section>
 
+
 <section class="slide" id="s9">
   <div class="slide-inner">
-    <div class="eyebrow reveal">08 • Modelo de execução</div>
+    <div class="eyebrow reveal">08 • Simulação aplicada + MTM</div>
+    <h2 class="reveal d2">Do tempo padrão para um <span class="red">ambiente virtual de decisão.</span></h2>
+    <p class="lead reveal d3">
+      Exemplo prático desenvolvido pela UNI: um simulador 3D de armazenagem com porta-pallets, empilhadeira retrátil, telemetria e operação interativa. 
+      O MTM pode fornecer os tempos elementares e tempos padrão; a simulação testa o efeito do método no fluxo, no layout, na distância e na capacidade.
+    </p>
+
+    <div class="sim-demo-grid">
+      
+      <div class="sim-link-panel reveal d3">
+        <div>
+          <div class="sim-link-kicker">Demonstração interativa • UNI</div>
+          <h3>Simulador 3D de armazenagem</h3>
+          <p>
+            Exemplo prático de ambiente virtual desenvolvido para representar uma operação de warehouse,
+            com porta-pallets, empilhadeira retrátil, movimentação e telemetria.
+            O objetivo é demonstrar como engenharia, dados e simulação podem apoiar decisões antes da implantação física.
+          </p>
+          <div class="sim-link-tags">
+            <span class="sim-link-tag">Warehouse 3D</span>
+            <span class="sim-link-tag">Empilhadeira retrátil</span>
+            <span class="sim-link-tag">Telemetria</span>
+            <span class="sim-link-tag">Layout</span>
+            <span class="sim-link-tag">Cenários virtuais</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="sim-url-card">
+            <code>antoneli1982.github.io/SIMULADOR.ESTOQUE/</code>
+            <span>↗</span>
+          </div>
+          <a class="cta primary sim-open"
+             href="https://antoneli1982.github.io/SIMULADOR.ESTOQUE/"
+             target="_blank"
+             rel="noopener noreferrer">
+            ABRIR SIMULADOR 3D ↗
+          </a>
+          <div class="sim-security-note">
+            O simulador abre em uma nova guia para garantir melhor desempenho gráfico e navegação.
+          </div>
+        </div>
+      </div>
+
+      <div class="card stack-card reveal d4">
+        <div class="card-number">ENGENHARIA INTEGRADA</div>
+        <h3>Ferramentas e métodos combinados</h3>
+        <div class="stack-list">
+          <div class="stack-item">
+            <div class="stack-icon">MTM</div>
+            <div><b>Methods-Time Measurement</b><span>Tempos elementares, método e capacidade com base técnica.</span></div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-icon">LS</div>
+            <div><b>Lean Six Sigma</b><span>Perdas, variabilidade, fluxo e priorização de melhorias.</span></div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-icon">VSM</div>
+            <div><b>VSM + BPMN</b><span>Fluxo físico, informação, interfaces e desenho AS-IS / TO-BE.</span></div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-icon">3D</div>
+            <div><b>Simulação 3D / Digital Twin</b><span>Validação virtual de layout, rotas, equipamentos e cenários.</span></div>
+          </div>
+          <div class="stack-item">
+            <div class="stack-icon">BI</div>
+            <div><b>Data Analytics</b><span>Indicadores, capacidade, comparação de cenários e tomada de decisão.</span></div>
+          </div>
+        </div>
+        <div class="sim-logic">
+          <b>Lógica do projeto:</b> medir o método com MTM → reproduzir o processo no ambiente virtual → testar alternativas → comparar capacidade, deslocamento e utilização de recursos → definir o TO-BE.
+        </div>
+      </div>
+    </div>
+    <div class="footer-note">
+      O simulador exibido é um exemplo funcional da capacidade de desenvolvimento da UNI. A parametrização de MTM e os cenários específicos do projeto são definidos conforme o processo real levantado em campo.
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="s10">
+  <div class="slide-inner">
+    <div class="eyebrow reveal">09 • Modelo de execução</div>
     <h2 class="reveal d2">Híbrido para manter <span class="red">presença no processo</span> e profundidade analítica.</h2>
     <p class="lead reveal d3">Os três dias in company concentram observação, entrevistas, medições e validação no ambiente real em Extrema/MG. Os dois dias no escritório da UNI em São Carlos/SP são dedicados ao tratamento técnico dos dados, modelagem e construção dos entregáveis.</p>
     <div class="week">
@@ -431,9 +729,9 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
   </div>
 </section>
 
-<section class="slide" id="s10">
+<section class="slide" id="s11">
   <div class="slide-inner">
-    <div class="eyebrow reveal">09 • Entregáveis</div>
+    <div class="eyebrow reveal">10 • Entregáveis</div>
     <div class="grid-2">
       <div>
         <h2 class="reveal d2">Material técnico que continua útil <span class="red">depois do projeto.</span></h2>
@@ -455,9 +753,9 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
   </div>
 </section>
 
-<section class="slide" id="s11">
+<section class="slide" id="s12">
   <div class="slide-inner">
-    <div class="eyebrow reveal">10 • Vantagens do projeto logístico</div>
+    <div class="eyebrow reveal">11 • Vantagens do projeto logístico</div>
     <h2 class="reveal d2">Ganhos que podem ser medidos, não apenas percebidos.</h2>
     <div class="grid-4" style="margin-top:26px">
       <div class="card soft reveal"><div class="card-number">01</div><h3>Visibilidade</h3><p class="small">O processo deixa de depender de memória e percepção individual.</p></div>
@@ -474,9 +772,9 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
   </div>
 </section>
 
-<section class="slide" id="s12">
+<section class="slide" id="s13">
   <div class="slide-inner">
-    <div class="eyebrow reveal">11 • Roadmap</div>
+    <div class="eyebrow reveal">12 • Roadmap</div>
     <h2 class="reveal d2">Diagnosticar. Medir. Redesenhar. Implementar.</h2>
     <p class="lead reveal d3">A lógica segue o método da UNI, adicionando uma etapa explícita de sustentação para garantir que o padrão não se perca após a entrega.</p>
     <div class="road">
@@ -490,9 +788,9 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
   </div>
 </section>
 
-<section class="slide" id="s13">
+<section class="slide" id="s14">
   <div class="slide-inner">
-    <div class="eyebrow reveal">12 • Governança e indicadores</div>
+    <div class="eyebrow reveal">13 • Governança e indicadores</div>
     <div class="grid-2">
       <div>
         <h2 class="reveal d2">A melhoria precisa aparecer na <span class="red">rotina de gestão.</span></h2>
@@ -511,9 +809,9 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
 </section>
 
 
-<section class="slide" id="s14">
+<section class="slide" id="s15">
   <div class="slide-inner">
-    <div class="eyebrow reveal">13 • Liderança técnica do projeto</div>
+    <div class="eyebrow reveal">14 • Liderança técnica do projeto</div>
     <div class="grid-2">
       <div>
         <h2 class="reveal d2">Ivan Carlos Antoneli</h2>
@@ -542,10 +840,10 @@ h3{font-size:clamp(20px,2vw,30px);line-height:1.1;letter-spacing:-.02em;margin-b
   </div>
 </section>
 
-<section class="slide" id="s15">
+<section class="slide" id="s16">
   <div class="slide-inner">
     <div class="final-card reveal">
-      <div class="eyebrow">14 • Próximo passo</div>
+      <div class="eyebrow">15 • Próximo passo</div>
       <h2>Do processo observado ao padrão <span class="red">mensurável e sustentável.</span></h2>
       <p class="lead">A UNI conduz o diagnóstico no ambiente real, transforma o trabalho em dados de engenharia e estrutura um cenário futuro com método, capacidade e governança.</p>
       <div class="logo-lockup">
